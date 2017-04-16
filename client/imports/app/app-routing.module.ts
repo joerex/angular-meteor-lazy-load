@@ -3,6 +3,12 @@ import {NgModule} from "@angular/core";
 import {Home} from "../home/home.component";
 import {CheapModule} from "../cheap/cheap.module";
 
+declare global {
+  interface NodeModule {
+    dynamicImport(path: string): any;
+  }
+}
+
 export const appRoutes: Route[] = [
   { path: '', component: Home },
   {
@@ -11,8 +17,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'expensive-route',
-    loadChildren: () => new Promise(resolve => module.dynamicImport('../expensive/expensive.module').then(m => resolve(m.ExpensiveModule)))
-    //loadChildren: () => module.dynamicImport('../expensive/expensive.module')
+    loadChildren: () => module.dynamicImport('../expensive/expensive.module').then(m => m.default)
   }
 ];
 

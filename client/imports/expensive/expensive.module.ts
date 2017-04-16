@@ -9,7 +9,7 @@ import {ExpensiveComponent} from "./expensive.component";
   declarations: [
     ExpensiveComponent
   ],
-  export: [ExpensiveComponent]
+  exports: [ExpensiveComponent]
 })
 
-export class ExpensiveModule {}
+export default class ExpensiveModule {}

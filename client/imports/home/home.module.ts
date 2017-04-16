@@ -5,7 +5,7 @@ import {Home} from "./home.component";
   declarations: [
     Home
   ],
-  export: [Home]
+  exports: [Home]
 })
 
 export class HomeModule {}

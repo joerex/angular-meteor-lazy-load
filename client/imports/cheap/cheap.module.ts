@@ -9,7 +9,7 @@ import {CheapComponent} from "./cheap.component";
   declarations: [
     CheapComponent
   ],
-  export: [CheapComponent]
+  exports: [CheapComponent]
 })
 
 export class CheapModule {}
